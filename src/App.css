@@ -19,7 +19,7 @@ body {
 .location {
   background: #209cee;
   padding: 20px;
-  margin: 20px;
+  margin: 0 20px;
   text-align: center;
 }
 
@@ -44,5 +44,22 @@ body {
 }
 
 .green {
-  color: green;
+  color: lime;
+}
+
+@media screen and (min-width: 600px) {
+  main {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .left {
+    width: 50%;
+  }
+  .right {
+    width: 50%;
+  }
+  #map {
+    height: 90vh;
+  }
 }

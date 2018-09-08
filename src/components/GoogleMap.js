@@ -29,7 +29,7 @@ class Map extends Component {
     const locations = this.props.locations;
     const locationMarkers = [];
     locations.forEach(location => {
-      let iconCol = "FFFFFF";
+      let iconCol = "fbff00";
       if (location.available_bikes < 4) {
         iconCol = "cc4444";
       }

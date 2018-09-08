@@ -50,13 +50,19 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>dBikes</h1>
-        <Map
-          locations={this.state.locations}
-          selectedLocation={this.state.selectedLocation}
-          onMarkerClick={this.onMarkerClick} />
-        <Info
-          location={this.state.selectedLocation} />
+        <h1 style={{ textAlign: "center" }}>dBikes</h1>
+        <main>
+          <div className="left">
+            <Map
+              locations={this.state.locations}
+              selectedLocation={this.state.selectedLocation}
+              onMarkerClick={this.onMarkerClick} />
+          </div>
+          <div className="right">
+            <Info
+              location={this.state.selectedLocation} />
+          </div>
+        </main>
       </div>
     );
   }
