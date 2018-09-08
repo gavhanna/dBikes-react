@@ -33,8 +33,6 @@ class App extends Component {
         new window.google.maps.Marker({
           position: { lat: position.coords.latitude, lng: position.coords.longitude },
           map: window.map,
-          //icon: "https://png.icons8.com/metro/50/000000/street-view.png",
-          //icon: "https://chart.googleapis.com/chart?chst=d_map_spinchld=2.1|0|FFFF42|13|b|Kumquats",
           icon: "https://chart.googleapis.com/chart?chst=d_map_pin_icon&chld=glyphish_user|65bf68|",
         });
       });
