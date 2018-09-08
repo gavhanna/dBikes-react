@@ -47,6 +47,7 @@ class Map extends Component {
         click(marker);
         window.map.panTo(marker.getPosition());
         window.map.setZoom(18);
+        document.querySelector(".right").scrollIntoView();
       });
       locationMarkers.push(marker);
     });
