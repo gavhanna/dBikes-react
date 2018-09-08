@@ -16,10 +16,17 @@ body {
   min-height: 50vh;
 }
 
+#streetViewMap {
+  width: 100%;
+  /* max-width: 95%; */
+  height: 50vh;
+  /* margin: 0 20px; */
+}
+
 .location {
   background: #209cee;
   padding: 20px;
-  margin: 0 20px;
+  /* margin: 0 20px; */
   text-align: center;
 }
 
@@ -55,11 +62,33 @@ body {
   }
   .left {
     width: 50%;
+    height: 90vh;
   }
   .right {
     width: 50%;
+    height: 90vh;
+    margin: 0;
+  }
+  .location {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .right>div:first-child {
+    height: 40%;
+  }
+  .availability {
+    justify-content: space-around;
+    margin: 30px auto;
+  }
+  .availability-info:first-child {
+    margin-right: 50px;
   }
   #map {
-    height: 90vh;
+    height: 100%;
+  }
+  #streetViewMap {
+    height: 53%;
+    margin: 0;
   }
 }

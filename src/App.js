@@ -3,6 +3,7 @@ import './App.css';
 import axios from "axios";
 import Map from "./components/GoogleMap";
 import Info from "./components/Info";
+import Streetview from "./components/Streetview";
 
 
 class App extends Component {
@@ -60,6 +61,8 @@ class App extends Component {
           </div>
           <div className="right">
             <Info
+              location={this.state.selectedLocation} />
+            <Streetview
               location={this.state.selectedLocation} />
           </div>
         </main>
