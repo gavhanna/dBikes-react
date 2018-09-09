@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import './App.css';
 import axios from "axios";
 import Map from "./components/GoogleMap";
-import Info from "./components/Info";
+import LocationInfo from "./components/LocationInfo";
 import Streetview from "./components/Streetview";
+import AppInfo from "./components/AppInfo";
 
 
 class App extends Component {
@@ -11,9 +12,11 @@ class App extends Component {
     super();
     this.state = {
       locations: [],
+      infoOpen: false,
       selectedLocation: {}
     }
     this.onMarkerClick = this.onMarkerClick.bind(this);
+    this.onMenuClick = this.onMenuClick.bind(this);
   }
 
   componentDidMount = () => {
@@ -46,11 +49,17 @@ class App extends Component {
     })
   }
 
+  onMenuClick() {
+    this.setState({ infoOpen: !this.state.infoOpen });
+  }
+
   render() {
     return (
       <div className="App">
         <h1 style={{ textAlign: "center" }}>dBikes</h1>
         <main>
+          <span onClick={this.onMenuClick} id="info-icon"></span>
+          {this.state.infoOpen ? <AppInfo /> : <div style={{ display: "none" }}></div>}
           <div className="left">
             <Map
               locations={this.state.locations}
@@ -58,7 +67,7 @@ class App extends Component {
               onMarkerClick={this.onMarkerClick} />
           </div>
           <div className="right">
-            <Info
+            <LocationInfo
               location={this.state.selectedLocation} />
             <Streetview
               location={this.state.selectedLocation} />

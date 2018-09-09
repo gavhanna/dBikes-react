@@ -1,7 +1,7 @@
 import React from 'react'
 import classnames from "classnames";
 
-const Info = (props) => {
+const LocationInfo = (props) => {
   return (
     <div className="location">
       {!props.location.address ? <h2>Please select a location on the map</h2> :
@@ -35,4 +35,4 @@ const Info = (props) => {
   )
 }
 
-export default Info;
+export default LocationInfo;

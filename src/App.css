@@ -4,7 +4,10 @@
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto",
+Arial,
+Helvetica,
+sans-serif;
   color: #333;
   color: white;
   background: #65bf68;
@@ -52,6 +55,39 @@ body {
 
 .green {
   color: lime;
+}
+
+#info {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  z-index: 10;
+  background: #ff4400;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+#info>p {
+  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#info-icon {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background: orange;
+  z-index: 100;
+  position: fixed;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 600px) {
