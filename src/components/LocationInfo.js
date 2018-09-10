@@ -3,7 +3,12 @@ import classnames from "classnames";
 
 const LocationInfo = (props) => {
   return (
-    <div className="location">
+    <div
+      className="location"
+      className={classnames("location", {
+        "hide-info": !props.isLocationSelected
+      })}
+    >
       {!props.location.address ? <h2>Please select a location on the map</h2> :
         <h2>{props.location.address}</h2>}
       <div className="availability">

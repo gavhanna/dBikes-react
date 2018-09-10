@@ -84,10 +84,11 @@ class App extends Component {
               onMapClick={this.onMapClick} />
           </div>
           <div className="right">
-            {this.state.isLocationSelected && <LocationInfo
-              location={this.state.selectedLocation} />}
-
-
+            {/* {this.state.isLocationSelected &&
+                } */}
+            <LocationInfo
+              location={this.state.selectedLocation}
+              isLocationSelected={this.state.isLocationSelected} />
           </div>
         </main>
       </div>

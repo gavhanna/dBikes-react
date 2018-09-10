@@ -43,6 +43,7 @@ body {
   width: 100%;
   max-width: 100vw;
   padding: 15px 0;
+  transition: all .2s ease-in-out;
 }
 
 .availability {
@@ -108,6 +109,10 @@ body {
   cursor: pointer;
 }
 
+.hide-info {
+  transform: translateY(1000px)
+}
+
 .status {
   font-size: 2rem;
 }
@@ -126,6 +131,7 @@ body {
     width: 50%;
     height: 90vh;
     margin: 0;
+    background: #209cee;
   }
   .location {
     display: flex;
@@ -151,5 +157,8 @@ body {
   #streetViewMap {
     height: 53%;
     margin: 0;
+  }
+  .hide-info {
+    transform: translateY(0px)
   }
 }
