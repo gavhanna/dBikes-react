@@ -42,7 +42,7 @@ body {
   bottom: 0;
   width: 100%;
   max-width: 100vw;
-  padding: 5px 0;
+  padding: 15px 0;
 }
 
 .availability {
@@ -75,6 +75,7 @@ body {
   width: 100vw;
   z-index: 10;
   background: #ff4400;
+  background: darkslategray;
   top: 49px;
   left: 0;
   display: flex;
@@ -123,17 +124,20 @@ body {
   }
   .right {
     width: 50%;
-    min-height: calc(100vh - 40px);
+    height: 90vh;
     margin: 0;
   }
   .location {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: inherit;
+    height: 100%;
+    padding: 0;
   }
-  .right>div:first-child {
-    height: 40%;
-  }
+  /* .right>div:first-child {
+  height: 40%;
+} */
   .availability {
     justify-content: space-around;
     margin: 30px auto;
