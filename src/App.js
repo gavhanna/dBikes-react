@@ -3,8 +3,9 @@ import './App.css';
 import axios from "axios";
 import Map from "./components/GoogleMap";
 import LocationInfo from "./components/LocationInfo";
-import Streetview from "./components/Streetview";
+// import Streetview from "./components/Streetview";
 import AppInfo from "./components/AppInfo";
+import Navbar from "./components/Navbar";
 
 
 class App extends Component {
@@ -28,13 +29,13 @@ class App extends Component {
         locations: res.data
       }))
     this.getCurrentPosition();
-    window.map.addListener(window.map, "click", function(e) {
+    window.map.addListener(window.map, "click", function (e) {
       this.onMapClick(e);
     })
   }
-  
+
   onMapClick = (e) => {
-      // this.setState({isLocationSelected: false})
+    // this.setState({isLocationSelected: false})
     console.log(e.latLng)
   }
 
@@ -52,7 +53,7 @@ class App extends Component {
     }
   }
 
-  
+
 
   onMarkerClick(marker) {
     this.setState({
@@ -68,7 +69,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1 style={{ textAlign: "center" }}>dBikes</h1>
+        <Navbar />
         <main>
           <span onClick={this.onMenuClick} id="info-icon"></span>
           {this.state.infoOpen ? <AppInfo /> : <div style={{ display: "none" }}></div>}
@@ -77,13 +78,13 @@ class App extends Component {
               locations={this.state.locations}
               selectedLocation={this.state.selectedLocation}
               onMarkerClick={this.onMarkerClick}
-              onMapClick={this.onMapClick}/>
+              onMapClick={this.onMapClick} />
           </div>
           <div className="right">
-          {this.state.isLocationSelected && <LocationInfo
+            {this.state.isLocationSelected && <LocationInfo
               location={this.state.selectedLocation} />}
-            
-            
+
+
           </div>
         </main>
       </div>
