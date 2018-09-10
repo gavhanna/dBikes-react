@@ -52,12 +52,15 @@ class Map extends Component {
       locationMarkers.push(marker);
     });
   }
+  
+  
 
   render() {
     this.initMarkers();
     return (
       <div
-        id="map">
+        id="map"
+        onClick={this.props.onMapClick}>
       </div>
     )
   }

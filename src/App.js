@@ -13,10 +13,12 @@ class App extends Component {
     this.state = {
       locations: [],
       infoOpen: false,
-      selectedLocation: {}
+      selectedLocation: {},
+      isLocationSelected: false
     }
     this.onMarkerClick = this.onMarkerClick.bind(this);
     this.onMenuClick = this.onMenuClick.bind(this);
+    this.onMapClick = this.onMapClick.bind(this);
   }
 
   componentDidMount = () => {
@@ -26,11 +28,19 @@ class App extends Component {
         locations: res.data
       }))
     this.getCurrentPosition();
+    window.map.addListener(window.map, "click", function(e) {
+      this.onMapClick(e);
+    })
+  }
+  
+  onMapClick = (e) => {
+      // this.setState({isLocationSelected: false})
+    console.log(e.latLng)
   }
 
   getCurrentPosition() {
     if (navigator.geolocation) {
-      navigator.geolocation.watchPosition(function (position) {
+      navigator.geolocation.getCurrentPosition(function (position) {
         let initialLocation = new window.google.maps.LatLng(position.coords.latitude, position.coords.longitude);
         window.map.setCenter(initialLocation);
         new window.google.maps.Marker({
@@ -42,10 +52,12 @@ class App extends Component {
     }
   }
 
+  
+
   onMarkerClick(marker) {
-    console.log(marker.location);
     this.setState({
-      selectedLocation: marker.location
+      selectedLocation: marker.location,
+      isLocationSelected: true
     })
   }
 
@@ -64,13 +76,14 @@ class App extends Component {
             <Map
               locations={this.state.locations}
               selectedLocation={this.state.selectedLocation}
-              onMarkerClick={this.onMarkerClick} />
+              onMarkerClick={this.onMarkerClick}
+              onMapClick={this.onMapClick}/>
           </div>
           <div className="right">
-            <LocationInfo
-              location={this.state.selectedLocation} />
-            <Streetview
-              location={this.state.selectedLocation} />
+          {this.state.isLocationSelected && <LocationInfo
+              location={this.state.selectedLocation} />}
+            
+            
           </div>
         </main>
       </div>

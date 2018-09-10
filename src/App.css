@@ -25,9 +25,15 @@ body {
 
 .location {
   background: #209cee;
-  padding: 20px;
+  /*padding: 20px;*/
   /* margin: 0 20px; */
   text-align: center;
+  position: fixed;
+  /*height: 30vh;*/
+  left:0;
+  bottom: 0;
+  width: 100%;
+  max-width: 100vw;
 }
 
 .availability {
@@ -43,7 +49,7 @@ body {
 }
 
 .count {
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 .red {
