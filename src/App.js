@@ -29,15 +29,11 @@ class App extends Component {
         locations: res.data
       }))
     this.getCurrentPosition();
-    window.map.addListener(window.map, "click", function (e) {
+    window.map.addListener("click", (e) => {
       this.onMapClick(e);
     })
   }
 
-  onMapClick = (e) => {
-    // this.setState({isLocationSelected: false})
-    console.log(e.latLng)
-  }
 
   getCurrentPosition() {
     if (navigator.geolocation) {
@@ -54,6 +50,13 @@ class App extends Component {
   }
 
 
+  onMapClick = (e) => {
+    console.log(e.va)
+    if (e.va) {
+
+      this.setState({ isLocationSelected: false })
+    }
+  }
 
   onMarkerClick(marker) {
     this.setState({

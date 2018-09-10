@@ -47,20 +47,20 @@ class Map extends Component {
         click(marker);
         window.map.panTo(marker.getPosition());
         window.map.setZoom(18);
-        document.querySelector(".right").scrollIntoView();
       });
       locationMarkers.push(marker);
     });
   }
-  
-  
+
+
 
   render() {
     this.initMarkers();
     return (
       <div
         id="map"
-        onClick={this.props.onMapClick}>
+        onClick={this.props.onMapClick}
+      >
       </div>
     )
   }
