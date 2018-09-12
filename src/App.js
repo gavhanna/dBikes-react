@@ -51,9 +51,8 @@ class App extends Component {
 
 
   onMapClick = (e) => {
-    console.log(e.va)
-    if (e.va) {
-
+    console.log(e.latLng)
+    if (e.latLng) {
       this.setState({ isLocationSelected: false })
     }
   }
