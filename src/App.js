@@ -31,7 +31,10 @@ class App extends Component {
     this.getCurrentPosition();
     window.map.addListener("click", (e) => {
       this.onMapClick(e);
-    })
+    });
+    window.map.addListener("drag", (e) => {
+      this.onMapDrag(e);
+    });
   }
 
 
@@ -51,10 +54,13 @@ class App extends Component {
 
 
   onMapClick = (e) => {
-    console.log(e.latLng)
     if (e.latLng) {
       this.setState({ isLocationSelected: false })
     }
+  }
+  onMapDrag = (e) => {
+    this.setState({ isLocationSelected: false })
+
   }
 
   onMarkerClick(marker) {

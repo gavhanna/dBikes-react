@@ -59,7 +59,6 @@ class Map extends Component {
     return (
       <div
         id="map"
-        onClick={this.props.onMapClick}
       >
       </div>
     )
