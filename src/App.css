@@ -53,18 +53,14 @@ body {
 
 #streetViewMap {
   width: 100%;
-  /* max-width: 95%; */
   height: 50vh;
-  /* margin: 0 20px; */
 }
 
 .location {
   background: #209cee;
-  /*padding: 20px;*/
-  /* margin: 0 20px; */
   text-align: center;
   position: fixed;
-  /*height: 30vh;*/
+  font-size: 1rem;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -75,7 +71,7 @@ body {
 
 .availability {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   max-width: 300px;
   margin: 10px auto;
 }
@@ -130,6 +126,13 @@ body {
 
 .status {
   font-size: 2rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+#status-banking {
+  font-size: 1.5rem;
+  padding: 5px;
 }
 
 @media screen and (min-width: 600px) {

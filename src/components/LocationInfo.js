@@ -10,7 +10,7 @@ const LocationInfo = (props) => {
       })}
     >
       {!props.location.address ? <h2>Please select a location on the map</h2> :
-        <h2>{props.location.address}</h2>}
+        <p>{props.location.address}</p>}
       <div className="availability">
         <span className="availability-info">
           <span
@@ -30,11 +30,21 @@ const LocationInfo = (props) => {
         </span>
       </div>
       <div className="status">
-        <p
+        <span
           className={classnames("green", {
             "red": props.location.status === "CLOSED"
           })}
-        >{props.location.status}</p>
+        >{props.location.status}
+        </span>
+        <span
+          id="status-banking"
+        >
+          {props.location.banking ?
+            <span style={{ color: "#65bf68" }}><i class="far fa-credit-card"></i></span> :
+            <span style={{ color: "salmon" }}><i class="far fa-credit-card"></i></span>
+          }
+
+        </span>
       </div>
     </div>
   )

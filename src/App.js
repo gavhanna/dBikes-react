@@ -63,6 +63,7 @@ class App extends Component {
       selectedLocation: marker.location,
       isLocationSelected: true
     })
+    console.log(marker.location);
   }
 
   onMenuClick() {
