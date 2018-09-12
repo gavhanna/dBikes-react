@@ -72,9 +72,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Navbar />
+        <Navbar onMenuClick={this.onMenuClick} infoOpen={this.state.infoOpen} />
         <main>
-          <span onClick={this.onMenuClick} id="info-icon"></span>
           {this.state.infoOpen ? <AppInfo /> : <div style={{ display: "none" }}></div>}
           <div className="left">
             <Map
