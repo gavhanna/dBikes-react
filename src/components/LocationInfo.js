@@ -38,9 +38,11 @@ const LocationInfo = (props) => {
         <span
           id="status-banking"
         >
-          {props.location.banking ?
-            <span style={{ color: "#65bf68" }}><i className="far fa-credit-card"></i></span> :
-            <span style={{ color: "salmon" }}><i className="far fa-credit-card"></i></span>
+          {props.isLocationSelected ?
+            props.isLocationSelected && props.location.banking ?
+              <span style={{ color: "#65bf68" }}><i className="far fa-credit-card"></i></span> :
+              <span style={{ color: "salmon" }}><i className="far fa-credit-card"></i></span>
+            : <span></span>
           }
 
         </span>
