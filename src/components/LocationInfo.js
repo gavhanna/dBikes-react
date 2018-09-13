@@ -1,5 +1,6 @@
 import React from 'react'
 import classnames from "classnames";
+import moment from "moment";
 
 const LocationInfo = (props) => {
   return (
@@ -48,6 +49,17 @@ const LocationInfo = (props) => {
           }
 
         </span>
+
+      </div>
+      <div className="last-updated">
+        {
+          props.location.last_update ?
+            <span>
+              Last updated {moment(new Date(props.location.last_update)).fromNow()}
+
+            </span> : ""
+
+        }
       </div>
     </div>
   )

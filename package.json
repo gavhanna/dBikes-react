@@ -6,9 +6,11 @@
     "axios": "^0.18.0",
     "classnames": "^2.2.6",
     "google-map-react": "^1.0.6",
+    "moment": "^2.22.2",
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
     "react-google-maps": "^9.4.5",
+    "react-moment": "^0.7.9",
     "react-pure-render": "^1.0.2",
     "react-scripts": "1.1.5"
   },

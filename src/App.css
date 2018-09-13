@@ -25,7 +25,8 @@ body {
   justify-content: space-between;
 }
 
-#info-button {
+#info-button,
+.nav-button {
   height: 40px;
   width: 40px;
   margin: 5px 5px 0 0;
@@ -38,12 +39,17 @@ body {
   cursor: pointer;
 }
 
-#info-button>i {
+#info-button>i,
+.nav-button>i {
   margin: 0 auto;
 }
 
 #navbar h1 {
   padding: 10px;
+}
+
+.nav-right {
+  display: flex;
 }
 
 #map {

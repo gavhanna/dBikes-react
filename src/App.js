@@ -24,10 +24,7 @@ class App extends Component {
 
   componentDidMount = () => {
     console.log("getting locations");
-    axios.get("https://api.jcdecaux.com/vls/v1/stations?contract=Dublin&apiKey=ef653629fed566ec812f1444f8bb2b3ddc6e1bbf")
-      .then(res => this.setState({
-        locations: res.data
-      }))
+    this.getDublinBikesData();
     this.getCurrentPosition();
     window.map.addListener("click", (e) => {
       this.onMapClick(e);
@@ -35,6 +32,15 @@ class App extends Component {
     window.map.addListener("drag", (e) => {
       this.onMapDrag(e);
     });
+  }
+
+  getDublinBikesData = () => {
+    console.log("Getting data");
+    axios.get("https://api.jcdecaux.com/vls/v1/stations?contract=Dublin&apiKey=ef653629fed566ec812f1444f8bb2b3ddc6e1bbf")
+      .then(res => this.setState({
+        locations: res.data
+      }))
+      .then(() => console.log("Data received"))
   }
 
 
@@ -78,7 +84,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Navbar onMenuClick={this.onMenuClick} infoOpen={this.state.infoOpen} />
+        <Navbar
+          onMenuClick={this.onMenuClick}
+          infoOpen={this.state.infoOpen}
+          getDublinBikesData={this.getDublinBikesData}
+        />
         <main>
           {this.state.infoOpen ? <AppInfo /> : <div style={{ display: "none" }}></div>}
           <div className="left">

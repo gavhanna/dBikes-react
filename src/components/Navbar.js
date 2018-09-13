@@ -9,10 +9,17 @@ const Navbar = (props) => {
         </div>
         <div className="nav-right">
           <span
+            title="Refresh Bikes Data"
+            className="nav-button"
+            onClick={props.getDublinBikesData}
+          >
+            <i className="fas fa-sync-alt"></i>
+          </span>
+          <span
             id="info-button"
             onClick={props.onMenuClick}
           >
-            {props.infoOpen ? <i className="fas fa-times"></i> : <i class="fas fa-bars"></i>}
+            {props.infoOpen ? <i className="fas fa-times"></i> : <i className="fas fa-bars"></i>}
           </span>
         </div>
       </nav>
