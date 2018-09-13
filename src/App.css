@@ -100,7 +100,7 @@ body {
   z-index: 10;
   background: #ff4400;
   background: darkslategray;
-  top: 49px;
+  top: 50px;
   left: 0;
   display: flex;
   flex-direction: column;
@@ -143,11 +143,11 @@ body {
   }
   .left {
     width: 50%;
-    height: 90vh;
+    height: calc(100vh - 50px);
   }
   .right {
     width: 50%;
-    height: 90vh;
+    height: calc(100vh - 50px);
     margin: 0;
     background: #209cee;
   }
@@ -159,9 +159,12 @@ body {
     height: 100%;
     padding: 0;
   }
-  /* .right>div:first-child {
-  height: 40%;
-} */
+  .location p {
+    font-size: 2rem;
+  }
+  .count {
+    font-size: 4rem;
+  }
   .availability {
     justify-content: space-around;
     margin: 30px auto;
@@ -178,5 +181,15 @@ body {
   }
   .hide-info {
     transform: translateY(0px)
+  }
+  #info {
+    max-width: 1200px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  #info {
+    left: 50%;
+    margin-left: -600px;
   }
 }

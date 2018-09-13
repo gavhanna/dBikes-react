@@ -12,7 +12,7 @@ const Navbar = (props) => {
             id="info-button"
             onClick={props.onMenuClick}
           >
-            {props.infoOpen ? <i className="fas fa-times"></i> : <i className="fas fa-info"></i>}
+            {props.infoOpen ? <i className="fas fa-times"></i> : <i class="fas fa-bars"></i>}
           </span>
         </div>
       </nav>

@@ -36,6 +36,7 @@ const LocationInfo = (props) => {
         >{props.location.status}
         </span>
         <span
+          title={props.location.banking ? "Machine accepts credit cards" : "Machine does not accept credit cards"}
           id="status-banking"
         >
           {
