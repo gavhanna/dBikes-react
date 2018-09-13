@@ -15,7 +15,8 @@ class App extends Component {
       locations: [],
       infoOpen: false,
       selectedLocation: {},
-      isLocationSelected: false
+      isLocationSelected: false,
+      updating: false
     }
     this.onMarkerClick = this.onMarkerClick.bind(this);
     this.onMenuClick = this.onMenuClick.bind(this);
@@ -23,7 +24,6 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    console.log("getting locations");
     this.getDublinBikesData();
     this.getCurrentPosition();
     window.map.addListener("click", (e) => {
@@ -35,12 +35,12 @@ class App extends Component {
   }
 
   getDublinBikesData = () => {
-    console.log("Getting data");
+    this.setState({ updating: true })
     axios.get("https://api.jcdecaux.com/vls/v1/stations?contract=Dublin&apiKey=ef653629fed566ec812f1444f8bb2b3ddc6e1bbf")
       .then(res => this.setState({
         locations: res.data
       }))
-      .then(() => console.log("Data received"))
+      .then(() => this.setState({ updating: false }))
   }
 
 
@@ -88,6 +88,7 @@ class App extends Component {
           onMenuClick={this.onMenuClick}
           infoOpen={this.state.infoOpen}
           getDublinBikesData={this.getDublinBikesData}
+          updating={this.state.updating}
         />
         <main>
           {this.state.infoOpen ? <AppInfo /> : <div style={{ display: "none" }}></div>}

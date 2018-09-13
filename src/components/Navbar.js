@@ -1,4 +1,5 @@
 import React from 'react'
+import classnames from "classnames";
 
 const Navbar = (props) => {
   return (
@@ -10,8 +11,10 @@ const Navbar = (props) => {
         <div className="nav-right">
           <span
             title="Refresh Bikes Data"
-            className="nav-button"
             onClick={props.getDublinBikesData}
+            className={classnames("nav-button", {
+              "loading": props.updating
+            })}
           >
             <i className="fas fa-sync-alt"></i>
           </span>

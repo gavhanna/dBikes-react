@@ -37,6 +37,7 @@ body {
   flex-direction: column;
   justify-content: center;
   cursor: pointer;
+  transition: all .2s ease-in-out;
 }
 
 #info-button>i,
@@ -139,6 +140,20 @@ body {
 #status-banking {
   font-size: 1.5rem;
   padding: 5px;
+}
+
+.updating {
+  background: salmon;
+  animation: updating 3s infinite;
+}
+
+@keyframes updating {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @media screen and (min-width: 600px) {
