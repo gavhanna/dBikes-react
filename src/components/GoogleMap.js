@@ -65,7 +65,6 @@ class Map extends Component {
       this.removeMarkers(this.state.markers);
     }
     this.initMarkers();
-    console.log("new props");
   }
 
 
