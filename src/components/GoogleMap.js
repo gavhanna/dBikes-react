@@ -50,12 +50,29 @@ class Map extends Component {
       });
       locationMarkers.push(marker);
     });
+    this.setState({ markers: locationMarkers })
+  }
+
+  removeMarkers = (markers) => {
+    markers.forEach(marker => {
+      marker.setMap(null);
+    });
+    console.log("removeMarkers");
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.state.markers.length > 0) {
+      this.removeMarkers(this.state.markers);
+    }
+    this.initMarkers();
+    console.log("new props");
   }
 
 
 
+
+
   render() {
-    this.initMarkers();
     return (
       <div
         id="map"

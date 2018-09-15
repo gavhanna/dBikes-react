@@ -29,9 +29,9 @@ class App extends Component {
     window.map.addListener("click", (e) => {
       this.onMapClick(e);
     });
-    window.map.addListener("drag", (e) => {
-      this.onMapDrag(e);
-    });
+    // window.map.addListener("drag", (e) => {
+    //   this.onMapDrag(e);
+    // });
   }
 
   getDublinBikesData = () => {
@@ -64,17 +64,16 @@ class App extends Component {
       this.setState({ isLocationSelected: false })
     }
   }
-  onMapDrag = (e) => {
-    this.setState({ isLocationSelected: false })
+  // onMapDrag = (e) => {
+  //   this.setState({ isLocationSelected: false })
 
-  }
+  // }
 
   onMarkerClick(marker) {
     this.setState({
       selectedLocation: marker.location,
       isLocationSelected: true
     })
-    console.log(marker.location);
   }
 
   onMenuClick() {
